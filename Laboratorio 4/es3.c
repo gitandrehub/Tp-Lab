@@ -4,13 +4,16 @@
 
 void funzione(int dim, int nc, int nr, int matrice[nr][nc]){
     int xsm = 0, ysm = 0, n = 0, sottom[(nr*nc)/dim][nc], somma[(nr*nc)/dim];
-    for(int i = 0;i<nr;i++){                        // ciclo sulla matrice
-        for(int j = 0;j<nc;j++){
+    int prova = 0;
+    for(int i = 0; i < nr;i++){             // controllo riga
+        for (int j = 0; j < nc;j++){        // colonna
             sottom[i][j] = matrice[i][j];
-            if((j+1)%dim == 0){                     // sottomatrice
-                for(int is = i+1;is < dim;is++){    // ciclo sulla sottomatrice
-                    for(int js = j;js != 0;js--){
-                        sottom[i][j] = matrice[is][js];
+            if((j+1)%dim == 0){
+                for(int is = i+1; is < dim;is++){             // controllo sottomatrice riga
+                    for (int js = j-1; js < dim;js++){        // colonna
+                        //sottom[i][js] = matrice[is][js];
+                        prova = matrice[is][js];
+                        printf("Bene");
                     }
                 }
             }
