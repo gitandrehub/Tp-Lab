@@ -3,10 +3,9 @@
 #define maxN 30
 
 void ruota(int N,int vettore[N],int P, int dir){
-    int nuovov[N], ind = 0, spdx = P;
-    if(dir == -1) {                      // nel caso di spostamento a destra cambio lo spostamento
-        spdx = N - P;
-    }
+    int nuovov[N], ind = 0;
+    int spdx = dir == -1 ? N-P : P;           // nel caso di spostamento a destra cambio direzione e posizione
+
     for (int i = spdx; i < N; i++) {
         nuovov[ind] = vettore[i];
         ind++;
@@ -15,7 +14,7 @@ void ruota(int N,int vettore[N],int P, int dir){
         nuovov[ind] = vettore[i];
         ind++;
     }
-    printf("vettore: [");           // stampa vettore risultante
+    printf("   vettore: [");           // stampa vettore risultante
     for(int i = 0;i<N;i++){
         printf(" %d ",nuovov[i]);
     }
@@ -29,6 +28,7 @@ int main(){
     printf("a) quanti numeri?");
     scanf("%d",&N);
     int vettore[N];
+
     if(N<maxN) {
         while (ind != N && val != -1) {
             printf("   inserire il numero:");
@@ -37,10 +37,10 @@ int main(){
             ind++;
         }
         while(pos != 0) {
-            printf("\nb) direzione e rotazione di posizioni:");
+            printf("\nb) direzione (1 sx e -1 dx) e rotazione di posizioni:");
             scanf("%d %d", &dir, &pos);
             if((dir == 1 || dir == -1) && pos != 0 && pos <= N){
-                ruota(N,vettore,pos,dir);
+                ruota(N, vettore,pos, dir);
             }
             else if((dir != 1 && dir != -1 && dir != 0) || pos > N){
                 printf("\nErrore d'inserimento!");
@@ -51,7 +51,7 @@ int main(){
         return 0;
     }
     else{
-        printf("\nErrore d'inserimento del parametro 'N'");
+        printf("\nErrore d'inserimento del parametro 'N'!");
         return 0;
     }
 }

@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
 
 #define max 30
 
-int sottoSequenze(int N, int V[N]){
+void sottoSequenze(int N, int V[N]){
     int riga = 0, col = 0, lriga[N], maxl;
     int sottoV[N][N];
 
@@ -42,17 +41,17 @@ int sottoSequenze(int N, int V[N]){
 }
 
 int main(){
-    int vettore[max], chiamata, val=1, ind = 0;
+    int vettore[max], scelta = 0, val=1, ind = 0;
     char nfile[100];
 
     for(int i = 0; i < max; i++){
         vettore[i] = 0;
     }
 
-    printf("Scegliere il metodo di inserimento (0 tastiera e 1 file):");
-    scanf("%d",&chiamata);
+    printf("Scegliere il metodo di inserimento (0 tastiera e 1 file):");        // da dove prendo i dati
+    scanf("%d",&scelta);
 
-    if(chiamata == 1){
+    if(scelta == 1){
         char file[100] = "../";
         FILE *fp;
         printf("Inserire il nome del file:");
@@ -60,7 +59,7 @@ int main(){
         strcat(file,nfile);
         fp = fopen(file, "r");
         if(fp == NULL){
-            printf("There is a problem on file!");
+            printf("Errore nell'apertura del file!");
             return 0;
         }
         else {
@@ -72,10 +71,11 @@ int main(){
             if(ind <= max){
                 sottoSequenze(ind, vettore);
             }
+            fclose(fp);
             return 0;
         }
     }
-    else if(chiamata == 0){
+    else if(scelta == 0){
         while(val != -1){
             printf("Inserire numero:");
             scanf("%d",&val);
@@ -90,7 +90,7 @@ int main(){
         return 0;
     }
     else{
-        printf("Errore d'inserimento");
+        printf("Errore d'inserimento!");
         return 0;
     }
 }
