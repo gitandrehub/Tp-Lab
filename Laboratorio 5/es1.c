@@ -28,7 +28,9 @@ void matrice(int righe, int col, FILE *fp){
         
         if(c == 4){
             int testa = capolista(col, squadra, c);
-            printf("Alla giornata %d la squadra %d e' in testa con %d punti\n", giornata, testa, squadra[testa]);
+            if(testa != -1){
+                printf("Alla giornata %d la squadra %d e' in testa con %d punti\n", giornata, testa, squadra[testa]);
+            }
             giornata ++;
             c = 0;
         }
