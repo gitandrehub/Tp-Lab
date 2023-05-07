@@ -3,4 +3,4 @@ project(Laboratorio_5 C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(Laboratorio_5 es3.c)
+add_executable(Laboratorio_5 prova.c)
