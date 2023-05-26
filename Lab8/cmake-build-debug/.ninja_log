@@ -1,0 +1,10 @@
+# ninja log v5
+5	201	7067251286984160	CMakeFiles/Lab8.dir/prova.c.obj	9c67ed5b7feed8c7
+394	1360	7067260139974994	Lab8.exe	733cdefbd75da29c
+9	391	7067260130930377	CMakeFiles/Lab8.dir/main.c.obj	2d1c95947c2a7a10
+1	230	7067264411122085	CMakeFiles/Lab8.dir/prova.c.obj	9c67ed5b7feed8c7
+234	589	7067264414600152	Lab8.exe	6bc1db6bb2adce2
+4	325	7067264955691048	CMakeFiles/Lab8.dir/prova.c.obj	9c67ed5b7feed8c7
+328	804	7067264960396688	Lab8.exe	6bc1db6bb2adce2
+4	233	7067265488509911	CMakeFiles/Lab8.dir/prova.c.obj	9c67ed5b7feed8c7
+236	614	7067265492188752	Lab8.exe	6bc1db6bb2adce2
